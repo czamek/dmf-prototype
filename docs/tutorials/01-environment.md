@@ -37,7 +37,7 @@ from the inside and see how they map onto the DMF layers.
 ## 2. Get this project and the MXL SDK
 
 ```sh
-git clone https://github.com/<your-user>/dmf-prototype.git
+git clone https://github.com/czamek/dmf-prototype.git
 cd dmf-prototype
 ./scripts/get-mxl.sh          # clones MXL v1.1.0 into vendor/mxl
 ```
