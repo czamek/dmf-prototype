@@ -1,0 +1,17 @@
+{
+  "name": "DMF prototype",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "forwardPorts": [8889],
+  "portsAttributes": {
+    "8889": { "label": "Browser monitor (step 2)" }
+  },
+  "postCreateCommand": "./scripts/get-mxl.sh"
+}

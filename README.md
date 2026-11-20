@@ -1,10 +1,10 @@
 # DMF prototype
 
-A small, runnable **Dynamic Media Facility** (DMF) on a laptop, built step by step to learn the
+A small, runnable **Dynamic Media Facility** (DMF) on one Linux machine, built step by step to learn the
 [EBU DMF reference architecture](https://tech.ebu.ch/publications/white-paper-2026-04-15).
 Each step adds working code, a tutorial, and reference pages.
 
-**Stack:** Docker Desktop on macOS (Apple Silicon), [MXL](https://github.com/dmf-mxl/mxl) v1.1.0,
+**Stack:** a Linux machine with Docker (GitHub Codespaces recommended, see `.devcontainer/`), [MXL](https://github.com/dmf-mxl/mxl) v1.1.0,
 GStreamer media functions (`mxlsrc` / `mxlsink`), Python control services.
 Docker Compose first, local Kubernetes (k3d) later.
 
