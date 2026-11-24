@@ -13,5 +13,5 @@
   "portsAttributes": {
     "8889": { "label": "Browser monitor (step 2)" }
   },
-  "postCreateCommand": "./scripts/get-mxl.sh"
+  "postCreateCommand": "bash scripts/get-mxl.sh"
 }
