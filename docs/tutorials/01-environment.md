@@ -21,16 +21,26 @@ A codespace is a Linux machine in the cloud with VS Code and Docker, opened from
 This repo includes a ready-made configuration in `.devcontainer/` that asks for a 4-core,
 16 GB machine, installs Docker, and fetches MXL v1.1.0 for you.
 
-1. Open <https://github.com/czamek/dmf-prototype>.
-2. Click **Code → Codespaces → Create codespace on main**.
-   If GitHub offers a machine type, choose **4-core**.
-3. Wait for VS Code to open in the browser. The first start runs `scripts/get-mxl.sh`, so
-   `vendor/mxl` already exists.
-4. Open a terminal (**Terminal → New Terminal**) and check Docker:
+1. Open <https://codespaces.new/czamek/dmf-prototype> in a desktop browser (not the GitHub
+   mobile app). Choose the **main** branch and a **4-core** machine, then click
+   **Create codespace**. (The same page is under **<> Code → Codespaces** on the repo's front page.)
+2. Wait for VS Code to open in the browser. The project is **already checked out** in the
+   codespace at `/workspaces/dmf-prototype`, and the terminal starts there. Do not run
+   `git clone`; you are already inside the repository.
+3. Open a terminal (**Terminal → New Terminal**). Everything you type there runs on the
+   codespace, not on your own computer. Check Docker and MXL:
 
    ```sh
+   pwd                      # /workspaces/dmf-prototype
    docker run --rm hello-world
    ls vendor/mxl
+   ```
+
+   The codespace runs `scripts/get-mxl.sh` when it is created. If `vendor/mxl` is missing
+   (for example in a codespace created before this was fixed), fetch it yourself:
+
+   ```sh
+   bash scripts/get-mxl.sh
    ```
 
 Personal GitHub accounts include free Codespaces hours each month; check the current quota under
@@ -49,7 +59,7 @@ Install Docker Engine and Git from your distribution, then:
 ```sh
 git clone https://github.com/czamek/dmf-prototype.git
 cd dmf-prototype
-./scripts/get-mxl.sh          # clones MXL v1.1.0 into vendor/mxl
+bash scripts/get-mxl.sh       # clones MXL v1.1.0 into vendor/mxl
 ```
 
 ### Mac with Apple Silicon
@@ -70,7 +80,7 @@ We pin MXL to a release tag so the tutorials keep working when MXL moves on.
 The MXL repository ships a Docker Compose example with six containers. Build it natively:
 
 ```sh
-cd vendor/mxl/examples
+cd /workspaces/dmf-prototype/vendor/mxl/examples   # or vendor/mxl/examples from the repo root on your own machine
 docker compose build
 ```
 
